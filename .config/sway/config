@@ -227,6 +227,7 @@ bar {
 bindsym $mod+shift+p exec $HOME/.config/sway/scripts/lock.sh
 
 default_border pixel 2
+default_floating_border pixel 2
 
 client.focused #00000000 #658721a7 #000000 #86b42ba7
 client.focused_inactive #00000000 #5b6d3ba7 #000000 #86b42ba7
