@@ -21,12 +21,14 @@ set $term alacritty
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show drun
 
+set $background $HOME/Pictures/background.jpg
+
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/background.jpg fill
+output * bg $background fill
 #
 # Example configuration:
 #
@@ -210,11 +212,27 @@ bar {
     # The default just shows the current date and time.
     status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
 
+    swaybar_command waybar
+
     colors {
         statusline #ffffff
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+#
+# Custom config
+#
+bindsym $mod+shift+p exec $HOME/.config/sway/scripts/lock.sh
+
+default_border pixel 2
+
+client.focused #00000000 #658721a7 #000000 #86b42ba7
+client.focused_inactive #00000000 #5b6d3ba7 #000000 #86b42ba7
+client.unfocused #00000000 #333333a7 #000000 #86b42ba7
+
+gaps inner 5
+gaps outer 0
 
 include /etc/sway/config.d/*
