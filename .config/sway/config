@@ -231,4 +231,12 @@ bindsym $mod+Period exec firefox
 gaps inner 5
 gaps outer 0
 
+# SwayFX specific config
+corner_radius 12
+blur enable
+blur_passes 2
+blur_radius 4
+# END
+
+
 include /etc/sway/config.d/*
