@@ -5,9 +5,21 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "tray"],
+    "modules-left": [
+      "sway/workspaces", 
+      "sway/scratchpad", 
+      "sway/window"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "custom/media",
+      "pulseaudio", 
+      "battery", 
+      "battery#bat2", 
+      "tray"
+    ],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -82,7 +94,8 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // "format": "{%H:%M}",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -151,16 +164,15 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+      "format": "{icon}{}",
+      "return-type": "json",
+      "format-icons": {
+        "Playing": " ",
+        "Paused": " "
+      },
+      "max-length":70,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl play-pause"
     }
 }
 
