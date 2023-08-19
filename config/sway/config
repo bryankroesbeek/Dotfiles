@@ -23,6 +23,9 @@ set $menu wofi --show drun
 
 set $background $HOME/Pictures/background.jpg
 
+# set $display-1 eDP-1
+# set $display-2 DP-1
+
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
