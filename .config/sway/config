@@ -212,7 +212,8 @@ bar {
 #
 bindsym $mod+shift+p exec $HOME/.config/sway/scripts/lock.sh
 
-bindsym print exec $HOME/.config/sway/scripts/screenshot.sh
+bindsym $mod+print exec $HOME/.config/sway/scripts/screenshot.sh
+bindsym print exec $HOME/.config/sway/scripts/screenshot-display.sh
 
 default_border pixel 2
 default_floating_border pixel 2
