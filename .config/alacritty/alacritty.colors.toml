@@ -1,0 +1,26 @@
+[colors]
+transparent_background_colors = true
+
+[colors.bright]
+black = "#444444"
+blue = "#0092ff"
+cyan = "#67ffef"
+green = "#abe05a"
+magenta = "#9a5feb"
+red = "#ff273f"
+white = "#ffffff"
+yellow = "#ffd141"
+
+[colors.normal]
+black = "#222222"
+blue = "#008df8"
+cyan = "#00d7eb"
+green = "#8ce00a"
+magenta = "#8d56d6"
+red = "#ff000f"
+white = "#ffffff"
+yellow = "#ffb900"
+
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"

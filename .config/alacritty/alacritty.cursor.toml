@@ -1,0 +1,9 @@
+[cursor]
+blink_interval = 250
+blink_timeout = 0
+thickness = 0.25
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "On"
+shape = "Underline"

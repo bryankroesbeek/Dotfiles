@@ -1,0 +1,18 @@
+import = ["/home/bryan/.config/alacritty/alacritty.colors.toml", "/home/bryan/.config/alacritty/alacritty.cursor.toml"]
+
+[env]
+TERM="xterm-256color"
+
+[font]
+size = 10
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 12
+y = 12
