@@ -13,18 +13,11 @@ $(git_prompt_info)\
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
-# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%} ("
-# CUSTOM_GIT_COLOR_NORMAL="%{$fg_bold[cyan]%}"
-# CUSTOM_GIT_BRACKET_COLOR="%{$reset_color%}%{$fg_bold[white]%}"
-# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}"
-ZSH_THEME_GIT_PROMPT_NORMAL="%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED_AND_STAGED="%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_DIVERGED="%{$fg[yellow]%}"
+FG_CYAN="%{$fg[cyan]%}"
+FG_RED="%{$fg[red]%}"
+FG_GREEN="%{$fg[green]%}"
+FG_YELLOW="%{$fg[yellow]%}"
+FG_RESET="%{$reset_color%}"
 
 # ≡ the branch matches its remote
 # ↑ the branch is ahead of its remote
@@ -45,45 +38,51 @@ function git_prompt_info() {
 }
 
 function prompt() {
+    GIT_AHEAD="$(command git rev-list origin/$(git_current_branch)..HEAD 2> /dev/null)"
+    GIT_BEHIND="$(command git rev-list HEAD..origin/$(git_current_branch) 2> /dev/null)"
+
     ### Git remote status
-    if [[ -n "$(command git rev-list origin/$(git_current_branch)..HEAD 2> /dev/null)" && "$(command git rev-list HEAD..origin/$(git_current_branch) 2> /dev/null)" ]]; then
-        build_prompt "$ZSH_THEME_GIT_PROMPT_DIVERGED" " ↕"
+    if [[ -n $GIT_AHEAD && $GIT_BEHIND ]]; then
+        build_prompt "$FG_YELLOW" " ↕"
         return
     fi
-    if [[ -n "$(command git rev-list origin/$(git_current_branch)..HEAD 2> /dev/null)" ]]; then
-        build_prompt "$ZSH_THEME_GIT_PROMPT_AHEAD" " ↑"
+
+    if [[ -n $GIT_AHEAD ]]; then
+        build_prompt "$FG_GREEN" " ↑"
         return
-    fi 
-    if [[ -n "$(command git rev-list HEAD..origin/$(git_current_branch) 2> /dev/null)" ]]; then
-        build_prompt "$ZSH_THEME_GIT_PROMPT_BEHIND" " ↓"
+    fi
+
+    if [[ -n $GIT_BEHIND ]]; then
+        build_prompt "$FG_RED" " ↓"
         return
     fi
     ###
-    
+
     ### Git local status
     GIT_STAGED="$(command git diff --staged --name-only)"
     GIT_UNSTAGED="$(command git diff --name-only)"
     GIT_UNTRACKED="$(command git ls-files --others --exclude-standard)"
 
     if ! [[ -n "$(command git show-ref origin/$(git_current_branch) 2> /dev/null)" ]]; then
-        build_prompt "$ZSH_THEME_GIT_PROMPT_NORMAL" ""
+        build_prompt "$FG_CYAN" ""
         return
     fi
 
     if [[ ( -n $GIT_UNSTAGED || -n $GIT_UNTRACKED ) && -n $GIT_STAGED ]]; then
-        build_prompt "$ZSH_THEME_GIT_PROMPT_NORMAL" "$ZSH_THEME_GIT_PROMPT_UNSTAGED_AND_STAGED !$ZSH_THEME_GIT_PROMPT_NORMAL"
+        build_prompt "$FG_CYAN" "$FG_YELLOW !$FG_CYAN"
         return
-    else
-        if [[ -n $GIT_UNSTAGED || -n $GIT_UNTRACKED ]]; then
-            build_prompt "$ZSH_THEME_GIT_PROMPT_NORMAL" "$ZSH_THEME_GIT_PROMPT_UNSTAGED !$ZSH_THEME_GIT_PROMPT_NORMAL"
-            return
-        fi
-        if [[ -n $GIT_STAGED ]]; then
-            build_prompt "$ZSH_THEME_GIT_PROMPT_NORMAL" "$ZSH_THEME_GIT_PROMPT_STAGED !$ZSH_THEME_GIT_PROMPT_NORMAL"
-            return
-        fi
     fi
-    build_prompt "$ZSH_THEME_GIT_PROMPT_NORMAL" " ≡"
+
+    if [[ -n $GIT_UNSTAGED || -n $GIT_UNTRACKED ]]; then
+        build_prompt "$FG_CYAN" "$FG_RED !$FG_CYAN"
+        return
+    fi
+
+    if [[ -n $GIT_STAGED ]]; then
+        build_prompt "$FG_CYAN" "$FG_GREEN !$FG_CYAN"
+        return
+    fi
+    build_prompt "$FG_CYAN" " ≡"
     ###
 }
 
@@ -91,6 +90,6 @@ function build_prompt() {
     # $1 = the color
     # $2 = git indicator
 
-    echo "$1 (${ref#refs/heads/}$2)$CUSTOM_GIT_COLOR_NORMAL$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "$1 ($(git_current_branch)$2)$FG_RESET"
 }
 
