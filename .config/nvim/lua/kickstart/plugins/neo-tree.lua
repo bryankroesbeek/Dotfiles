@@ -12,9 +12,16 @@ return {
   cmd = 'Neotree',
   keys = {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '<leader>pr', ':Neotree reveal current<cr>', { desc = 'NeoTree reveal current' } },
+    -- nnoremap / 
+    -- nnoremap | :Neotree reveal<cr>
+    -- nnoremap gd :Neotree float reveal_file=<cfile> reveal_force_cwd<cr>
+    -- nnoremap <leader>b :Neotree toggle show buffers right<cr>
+    -- nnoremap <leader>s :Neotree float git_status<cr>
   },
   opts = {
     filesystem = {
+      hijak_netrw_behavior = "open_default",
       window = {
         mappings = {
           ['\\'] = 'close_window',
