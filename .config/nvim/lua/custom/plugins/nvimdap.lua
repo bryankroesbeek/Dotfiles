@@ -10,7 +10,22 @@ return {
       local dap = require "dap"
       local ui = require "dapui"
 
-      require("dapui").setup()
+      require("dapui").setup({
+        layouts = { {
+          elements = { {
+            id = "scopes",
+            size = 0.33
+          }, {
+            id = "breakpoints",
+            size = 0.33
+          }, {
+            id = "watches",
+            size = 0.33
+          } },
+          position = "left",
+          size = 60
+        } },
+      })
 
       local function select_sync(items, opts)
         local co = assert(coroutine.running())
@@ -39,7 +54,7 @@ return {
         dap.adapters.coreclr = {
           type = 'executable',
           command = csharp_ls_debugger,
-          args = {'--interpreter=vscode'}
+          args = { '--interpreter=vscode' }
         }
 
         dap.configurations.cs = {
