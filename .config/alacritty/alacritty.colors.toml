@@ -3,23 +3,23 @@ transparent_background_colors = true
 
 [colors.bright]
 black = "#444444"
-blue = "#0092ff"
-cyan = "#67ffef"
-green = "#abe05a"
-magenta = "#9a5feb"
 red = "#ff273f"
-white = "#ffffff"
+green = "#abe05a"
 yellow = "#ffd141"
+blue = "#0092ff"
+magenta = "#9a5feb"
+cyan = "#67ffef"
+white = "#ffffff"
 
 [colors.normal]
 black = "#222222"
-blue = "#008df8"
-cyan = "#00d7eb"
-green = "#8ce00a"
-magenta = "#8d56d6"
 red = "#ff000f"
-white = "#ffffff"
+green = "#8ce00a"
 yellow = "#ffb900"
+blue = "#008df8"
+magenta = "#8d56d6"
+cyan = "#00d7eb"
+white = "#ffffff"
 
 [colors.primary]
 background = "#000000"
