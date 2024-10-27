@@ -119,6 +119,7 @@ output * bg $background fill
 #
 # Workspaces:
 #
+    include ./config.d/09-displays.config
     include ./config.d/10-monitors.config
 #
 # Layout stuff:
