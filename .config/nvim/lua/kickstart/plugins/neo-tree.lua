@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '\\', ':Neotree reveal current<CR>', { desc = 'NeoTree reveal' } },
     { '<leader>pr', ':Neotree reveal current<cr>', { desc = 'NeoTree reveal current' } },
     -- nnoremap / 
     -- nnoremap | :Neotree reveal<cr>
