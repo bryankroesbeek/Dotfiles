@@ -160,12 +160,12 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        gopls = {
-          capabilities = capabilities,
-          cmd = {"gopls"},
-          filetypes = { "go", "gomod", "gowork", ""},
-          root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-        },
+        -- gopls = {
+        --   capabilities = capabilities,
+        --   cmd = {"gopls"},
+        --   filetypes = { "go", "gomod", "gowork", ""},
+        --   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+        -- },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -174,8 +174,14 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
-        csharp_ls = {},
+        -- tsserver = {},
+
+        -- omnisharp = {
+        --   enable_editorconfig_support = true,
+        --   enable_roslyn_analyzers     = true,
+        --   enable_import_completion    = true,
+        --   sdk_include_prereleases     = false,
+        -- },
         --
 
         lua_ls = {
