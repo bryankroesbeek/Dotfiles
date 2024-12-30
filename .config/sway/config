@@ -48,6 +48,8 @@ output * bg $background fill
            timeout 180 '$HOME/.config/sway/scripts/lock.sh' \
            timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
+  exec wlsunset -l 51.9 -L 4.4 -t 2700
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
