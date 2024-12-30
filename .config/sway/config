@@ -219,9 +219,9 @@ bindsym print exec $HOME/.config/sway/scripts/screenshot-display.sh
 default_border pixel 2
 default_floating_border pixel 2
 
-client.focused #00000000 #658721a7 #000000 #86b42ba7
-client.focused_inactive #00000000 #5b6d3ba7 #000000 #86b42ba7
-client.unfocused #00000000 #333333a7 #000000 #86b42ba7
+client.focused #00000000 #99ff33 #000000 #99ff33
+client.focused_inactive #00000000 #859761 #000000 #86b42b
+client.unfocused #00000000 #333333 #000000 #86b42b
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
