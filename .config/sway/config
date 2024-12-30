@@ -241,8 +241,8 @@ gaps outer 0
 # SwayFX specific config
 corner_radius 12
 blur enable
-blur_passes 2
-blur_radius 4
+blur_passes 4
+blur_radius 3
 # END
 
 
