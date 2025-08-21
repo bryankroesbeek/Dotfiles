@@ -127,6 +127,11 @@ return {
             })
           end
 
+          local set_hl = vim.api.nvim_set_hl
+          set_hl(0, "@lsp.type.variable", { link = "@variable" })
+          set_hl(0, "@lsp.type.parameter", { link = "@variable.parameter" })
+
+
           -- The following autocommand is used to enable inlay hints in your
           -- code, if the language server you are using supports them
           --
