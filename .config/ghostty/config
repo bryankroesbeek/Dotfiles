@@ -1,0 +1,18 @@
+
+font-family = "JetBrainsMonoNL Nerd Font"
+
+font-size = 10
+font-feature="-liga"
+
+adjust-cell-height=12%
+
+window-padding-x = "6"
+window-padding-y = "6"
+window-padding-color = "background"
+
+shell-integration-features = no-cursor
+cursor-style = underline
+
+mouse-scroll-multiplier=0.5
+
+theme = "monokai-bryan.theme"
