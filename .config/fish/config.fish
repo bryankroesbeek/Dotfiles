@@ -3,6 +3,6 @@ if status is-interactive
 end
 
 function fish_prompt
-    echo $($HOME/repos/emerald-prompt/bin/emerald fish)
+    echo ($HOME/repos/emerald-prompt/bin/emerald fish)
 end
 
