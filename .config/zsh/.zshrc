@@ -9,7 +9,7 @@ promptinit
 # Add this function to your .bashrc file
 function set_custom_prompt {
     # TODO: Use proper path the executable instead of repo path
-    PROMPT="$(~/repos/emerald-prompt/emerald zsh)"
+    PROMPT="$(~/repos/emerald-prompt/bin/emerald zsh)"
 }
 
 # Add the function to precmd to update the prompt dynamically
