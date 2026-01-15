@@ -28,12 +28,10 @@ HISTFILE=~/.zsh_history
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' menu select
@@ -50,6 +48,7 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle :compinstall filename '/home/bryan/.zshrc'
 
 autoload -Uz compinit
+zmodload zsh/complist
 compinit
 # End of lines added by compinstall
 
@@ -58,6 +57,16 @@ source ~/.config/zsh/init.zsh
 
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/scripts"
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]=fg=4
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=2
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=10
+
 
 export COLORTERM="truecolor"
 
