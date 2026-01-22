@@ -67,6 +67,11 @@ ZSH_HIGHLIGHT_STYLES[command]=fg=4
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=2
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=10
 
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=3
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=11
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]=fg=9
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]=fg=9
+ZSH_HIGHLIGHT_STYLES[default]=fg=14
 
 export COLORTERM="truecolor"
 
