@@ -1,38 +1,38 @@
 # colors normal
 # black
-palette = 0=#222222
+palette = 0=#222
 # red
-palette = 1=#ff000f
+palette = 1=#e11
 # green
-palette = 2=#8ce00a
+palette = 2=#6e1
 # yellow
-palette = 3=#ffb900
+palette = 3=#eb1
 # blue
-palette = 4=#008df8
+palette = 4=#16e
 # magenta
-palette = 5=#8d56d6
+palette = 5=#85e
 # cyan
-palette = 6=#00d7eb
+palette = 6=#1de
 # white
-palette = 7=#ffffff
+palette = 7=#eee
 
 # colors bright
 # black
-palette = 8=#444444
+palette = 8=#555
 # red
-palette = 9=#ff273f
+palette = 9=#f55
 # green
-palette = 10=#abe05a
+palette = 10=#bf7
 # yellow
-palette = 11=#ffd141
+palette = 11=#fd7
 # blue
-palette = 12=#0092ff
+palette = 12=#0af
 # magenta
-palette = 13=#9a5feb
+palette = 13=#a8f
 # cyan
-palette = 14=#67ffef
+palette = 14=#7ef
 # white
-palette = 15=#ffffff
+palette = 15=#fff
 
 
 background = "#000000"
