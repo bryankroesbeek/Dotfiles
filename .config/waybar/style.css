@@ -120,6 +120,20 @@
     padding: 7px;
 }
 
+.modules-left {
+  color: @primary;
+  margin-left: 8px;
+}
+
+.modules-center {
+  color: @primary;
+}
+
+.modules-right {
+  color: @primary;
+  margin-right: 8px;
+}
+
 #network.disconnected {
     color: @yellow;
 }
