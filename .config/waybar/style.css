@@ -158,13 +158,14 @@
   all: initial;
   color: @primary;
   padding: 0 4px;
+  margin: 0 2px;
   min-width: 16px;
 }
 
 #workspaces button.active {
     background: @primary;
     color: @background;
-    margin: 6px;
+    margin: 6px 2px;
     border-radius: 5px;
 }
 
