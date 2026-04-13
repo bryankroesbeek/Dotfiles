@@ -1,26 +1,27 @@
 {
+    "reload_style_on_change": true,
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 15, // Waybar height (to be removed for auto height)
+    "height": 36, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-      "sway/mode",
-      "sway/workspaces",
-      "hyprland/workspaces",
-      "sway/scratchpad",  
-      "sway/window"
+        "sway/mode",
+        "sway/workspaces",
+        "hyprland/workspaces",
+        "sway/scratchpad",  
+        "sway/window"
     ],
     "modules-center": [
-      "clock"
+        "clock"
     ],
     "modules-right": [
-      "custom/media",
-      "pulseaudio", 
-      "battery", 
-      "battery#bat2", 
-      "tray"
+        "custom/media",
+        "pulseaudio", 
+        "battery", 
+        "battery#bat2", 
+        "tray"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -38,6 +39,40 @@
     //         "default": ""
     //     }
     // },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "0",
+
+            "11": "11",
+            "12": "12",
+            "13": "13",
+            "14": "14",
+            "15": "15",
+            "16": "16",
+            "17": "17",
+            "18": "18",
+            "19": "19",
+            "20": "20",
+
+            "21": "21",
+            "22": "22",
+            "23": "23",
+            "24": "24",
+            "25": "25",
+        },
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -126,7 +161,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -148,33 +183,28 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format": "{icon}",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        // "format-bluetooth-muted": " {icon} {format_source}",
+        // "format-source": "{volume}% ",
         "format-source-muted": "",
+        "format-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+          "headphone": ["  ", "  ", "  "],
+          "headset": ["  ", "  ", "  "],
+          "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
     "custom/media": {
-      "format": "{icon} {0}",
-      "return-type": "json",
-      "format-icons": {
-        "Playing": " ",
-        "Paused": " "
-      },
-      "max-length":70,
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause"
+        "format": "{icon} {0}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": " ",
+            "Paused": " "
+        },
+        "max-length":70,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause"
     }
 }
-

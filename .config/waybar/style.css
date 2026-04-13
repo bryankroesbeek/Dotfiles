@@ -1,11 +1,7 @@
-
-@define-color base           #1b1f19 ;
-@define-color urgent         #b02c36 ;
-@define-color primary_orange #fe9000 ;
-@define-color primary_yellow #ffdd4a ;
-@define-color primary_red    #da1b2b ;
-@define-color primary_blue   #9fd9b2 ;
-@define-color primary_blue_2 #6ff6ad ;
+@define-color background #1f1f1f;
+@define-color primary #9ff952;
+@define-color yellow #ffdd4a;
+@define-color red #da1b2b;
 
 @keyframes blink-warning {
     70% {
@@ -33,20 +29,10 @@
  * Base styles
  * -------------------------------------------------------------------------- */
 
-/* Reset all styles */
-* {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 1px;
-    padding: 0;
-}
-
 /* The whole bar */
 #waybar {
-    background: transparent;
-    color: @primary_blue;
-    background-color: @base;
+    background: @background;
+    color: @primary;
     font-family: "Overpass Nerd Font";
     font-size: 14px;
     border-radius: 0px;
@@ -83,7 +69,7 @@
 }
 
 #battery.warning {
-    color: @primary_orange;
+    color: @yellow;
 }
 
 #battery.critical {
@@ -101,7 +87,7 @@
 }
 
 #cpu.warning {
-    color: @primary_orange;
+    color: @yellow;
 }
 
 #cpu.critical {
@@ -115,7 +101,7 @@
 }
 
 #memory.warning {
-    color: @primary_orange;
+    color: @yellow;
  }
 
 #memory.critical {
@@ -128,14 +114,14 @@
 
 #mode {
     background: @primary_yellow;
-    border-bottom: 3px @primary_blue;
-    color: @base;
-    margin-left: 5px;
+    border-bottom: 3px @primary;
+    color: @background;
+    margin: 5px;
     padding: 7px;
 }
 
 #network.disconnected {
-    color: @primary_orange;
+    color: @yellow;
 }
 
 #pulseaudio {
@@ -143,7 +129,7 @@
 }
 
 #pulseaudio.muted {
-    color: @primary_yellow;
+    color: @yellow;
 }
 
 #temperature.critical {
@@ -154,26 +140,26 @@
     font-weight: bold;
 }
 
-#workspaces {
-    font-size:13px;
-}
-
 #workspaces button {
-    color: @primary_blue;
-    border-bottom: 3px solid @primary_blue_2;
-    margin-bottom: 0px;
-    padding:0px;
+  all: initial;
+  color: @primary;
+  padding: 0 4px;
+  min-width: 16px;
 }
 
-#workspaces button.focused {
-    border-bottom: 3px solid  @primary_yellow;
-    margin-bottom: 0px;
-    padding-left:0;
+#workspaces button.active {
+    background: @primary;
+    color: @background;
+    margin: 6px;
+    border-radius: 5px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
 #workspaces button.urgent {
-    border-color: @primary_red;
-    color: @primary_red;
+    color: @red;
 }
 
 #custom-power {
