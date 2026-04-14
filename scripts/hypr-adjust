@@ -1,0 +1,27 @@
+#! /bin/python3
+
+from subprocess import Popen, PIPE, STDOUT
+from json import loads
+
+
+def simpleProc(input):
+    return Popen(input, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
+
+
+def simpleRead(process):
+    json = process.stdout.read().decode("utf-8")
+    return loads(json)
+
+
+process = simpleProc(["hyprctl", "workspacerules", "-j"])
+rules = simpleRead(process)
+for rule in rules:
+    workspace = rule["workspaceString"]
+    monitor = rule["monitor"]
+    simpleProc([
+        "hyprctl",
+        "dispatch",
+        "moveworkspacetomonitor",
+        workspace,
+        monitor
+    ])
