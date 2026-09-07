@@ -10,6 +10,9 @@ window-padding-x = "6"
 window-padding-y = "6"
 window-padding-color = "background"
 
+working-directory = home
+window-inherit-working-directory = false
+
 shell-integration-features = no-cursor
 cursor-style = underline
 
