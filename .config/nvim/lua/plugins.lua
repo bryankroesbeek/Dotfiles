@@ -7,7 +7,10 @@ vim.pack.add({
 	gh("echasnovski/mini.icons"),
 	gh("nvim-tree/nvim-web-devicons"),
 
-	gh("saghen/blink.cmp"),
+	{
+		src = gh("saghen/blink.cmp"),
+		version = "v1",
+	},
 
 	gh("nvim-treesitter/nvim-treesitter"),
 	gh("nvim-treesitter/nvim-treesitter-context"),
