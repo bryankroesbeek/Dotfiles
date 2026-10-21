@@ -1,0 +1,54 @@
+#! /usr/bin/env python3
+
+import os
+import argparse
+import random
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-w', '--word', action="store_true")
+parser.add_argument('-c', '--capitalize', action="store_true")
+parser.add_argument('-s', '--sentence', action="store_true")
+parser.add_argument('-p', '--paragraph', action="store_true")
+
+args = parser.parse_args()
+
+wordlist = []
+
+homedir = os.path.expanduser("~")
+
+with open(os.path.join(homedir, ".local/share/wordlists/lorem"), "r") as f:
+    wordlist = f.read().split()
+
+def get_word(word_list):
+    return random.choice(word_list)
+
+def get_sentence(word_list):
+    length = random.randrange(10, 15)
+    sentence = []
+    for i in range(length):
+        sentence.append(get_word(word_list))
+    return " ".join(sentence).capitalize() + '.'
+
+def get_paragraph(word_list):
+    length = random.randrange(5, 8)
+    sentences = []
+    for i in range(length):
+        sentences.append(get_sentence(word_list))
+
+    return " ".join(sentences)
+
+
+if (args.word):
+    word = get_word(wordlist)
+    if (args.capitalize):
+        word = word.capitalize()
+    print(word, end='')
+    exit
+
+if (args.sentence):
+    print(get_sentence(wordlist), end='')
+    exit
+
+if (args.paragraph):
+    print(get_paragraph(wordlist), end='')
+    exit
