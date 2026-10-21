@@ -6,4 +6,11 @@ require("blink.cmp").setup({
       },
     },
   },
+
+  keymap = {
+    preset = "default",
+
+    ["<CR>"] = { "select_and_accept", "fallback" },
+    ["<M-CR>"] = { "fallback" },
+  },
 })
