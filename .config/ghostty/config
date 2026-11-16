@@ -14,8 +14,8 @@ working-directory = home
 window-inherit-working-directory = false
 
 shell-integration-features = no-cursor
-cursor-style = underline
+cursor-style = block
 
-mouse-scroll-multiplier=0.5
+mouse-scroll-multiplier=3
 
-theme = "monokai-bryan.theme"
+theme = "monokai.theme"

@@ -1,0 +1,39 @@
+# colors normal
+# black
+palette = 0=#161613
+# red
+palette = 1=#E22E4C
+# green
+palette = 2=#a6e22e
+# yellow
+palette = 3=#E2C42E
+# blue (using orange)
+palette = 4=#2E96CB
+# magenta
+palette = 5=#6A2EE2
+# cyan
+palette = 6=#2EE2C4
+# white
+palette = 7=#c0c1b5
+
+# colors bright
+# black
+palette = 8=#515150
+# red
+palette = 9=#E84A5A
+# green
+palette = 10=#B0E549
+# yellow
+palette = 11=#E6C947
+# blue (using orange)
+palette = 12=#2EA6E2
+# magenta
+palette = 13=#B68CFF
+# cyan
+palette = 14=#78DDF0
+# white
+palette = 15=#fdfff1
+
+background = "#272822"
+foreground = "#fdfff1"
+
