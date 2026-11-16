@@ -10,6 +10,8 @@ window-padding-x = "6"
 window-padding-y = "6"
 window-padding-color = "background"
 
+background-blur = true
+
 working-directory = home
 window-inherit-working-directory = false
 
