@@ -33,7 +33,7 @@
 #waybar {
     background: @background;
     color: @primary;
-    font-family: "Overpass Nerd Font";
+    font-family: "OverpassNerdFont";
     font-size: 14px;
     border-radius: 0px;
     opacity: 0.90;
@@ -112,12 +112,14 @@
     padding-right:5px;
 }
 
-#mode {
-    background: @primary_yellow;
-    border-bottom: 3px @primary;
+#mode, #submap {
+    background: @yellow;
     color: @background;
-    margin: 5px;
-    padding: 7px;
+    margin: 6px 2px;
+    padding: 0 5px;
+    font-weight: 600;
+    font-style: italic;
+    border-radius: 5px;
 }
 
 .modules-left {
@@ -154,8 +156,13 @@
     font-weight: bold;
 }
 
+#workspaces {
+    font-family: "OverpassNerdFont";
+    font-size: 14px;
+    font-weight: 700;
+}
+
 #workspaces button {
-  all: initial;
   color: @primary;
   padding: 0 4px;
   margin: 0 2px;
